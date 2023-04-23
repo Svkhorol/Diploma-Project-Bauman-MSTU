@@ -1,0 +1,131 @@
+<!doctype html>
+<style>
+body {
+    background-image: url("{{ url_for('static', filename='images/photo.jpg') }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+    color: #15686a;
+}
+.prediction{
+    color: white;
+    background-color: #15686a;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.legend{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+form{
+    margin: auto;
+    width: 50%;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.65);
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+form input[type="number"] {
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.button{
+    background-color: #15686a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.res{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+</style>
+
+
+
+<head>
+    <title>Прогнозирование конечных свойств композиционных материалов</title>
+</head>
+
+<div class="prediction">
+    Прогнозирование конечных свойств композиционных материалов
+</div>
+<div>
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend class="legend">Введите значения исходных характеристик композита</legend>
+        <table>
+            <tr>
+                <td>Количество отвердителя, м.%</td>
+                <td><input name="Количество отвердителя, м.%" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Содержание эпоксидных групп, %</td>
+                <td><input name="Содержание эпоксидных групп, %" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Температура вспышки, С</td>
+                <td><input name="Температура вспышки, С" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Потребление смолы, г/м<sup>2</sup></td>
+                <td><input name="Потребление смолы, г/м2" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Угол нашивки, град</td>
+                <td><input name="Угол нашивки, град" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Шаг нашивки</td>
+                <td><input name="Шаг нашивки" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Плотность нашивки</td>
+                <td><input name="Плотность нашивки" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Плотность, кг/м<sup>3</sup></td>
+                <td><input name="Плотность, кг/м3" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Поверхностная плотность, г/м<sup>2</sup></td>
+                <td><input name="Поверхностная плотность, г/м2" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Модуль упругости, ГПа</td>
+                <td><input name="Модуль упругости, ГПа" type="number" required value="1"></td>
+            </tr>
+            <tr>
+                <td>Соотношение матрица-наполнитель</td>
+                <td><input name="Соотношение матрица-наполнитель" type="number" required value="1"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" class="button" value="Рассчитать модуль упругости при растяжении">
+    </fieldset>
+</form>
+</div>
+
+{% if result %}
+    <div class="res">
+        Результат расчета модуля упругости<br>
+        при растяжении композита:<br>
+        {{result}} ГПа
+    </div>
+{% endif %}
+
+
