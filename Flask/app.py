@@ -2,13 +2,8 @@ import pickle
 
 import flask
 import numpy as np
-#import sklearn
-#import xgboost
 
 from flask import render_template, request
-#from sklearn.preprocessing import MinMaxScaler
-#from xgboost import XGBRegressor
-
 
 def get_prediction(values: list) -> float:
     '''Функция для обработки данных и вычислений'''
@@ -44,47 +39,32 @@ names = ['Количество отвердителя, м.%',
          'Модуль упругости, ГПа',
          'Соотношение матрица-наполнитель']
 
-
-app = flask.Flask(__name__, template_folder='templates')
-
+app = flask.Flask(__name__, template_folder='templates', static_folder='static')
 # Начальная страница
 @app.route('/', methods= ['POST', 'GET'])
 def main():
-    '''Функция отработки web-формы страницы
-    - получает со страницы значения
-    - возвращает предсказанный результат.
+    '''Функция отработки web-формы страницы.
+
+    Получает со страницы значения и
+    возвращает предсказанный результат.
     '''
 
-    # Если происходит запрос методом GET
+    # Если происходит запрос методом GET, т.е. первичное обращение к странице
     if request.method == 'GET':
         return render_template('main.html')
 
-    # Если происходит запрос методом POST
+    # Если происходит запрос методом POST, т.е. передаются данные в форме
     if request.method == 'POST':
-
         # передаются данные с веб-форм
-        X = []
+        input_values = []
         for field_name in names:
-            # Получаем значение поля формы
-            x = float(request.form.get(field_name))  # float(request.form[field_name])
-            # Добавляем значение в список
-            X.append(x)
-
+            # получаем значение поля формы и добавляем значение в список
+            input_values.append(float(request.form.get(field_name)))
         # запускается расчет
-        y = get_prediction(X)   # y = get_prediction([[X]])
-
+        y = get_prediction(input_values)
         # возвращается результат расчета модели
         return render_template('main.html', result=y)
 
 
 if __name__ == '__main__':
     app.run()
-
-# Тестовые входные значения
-# 111.86, 22.26785714, 284.61538462, 220., 0., 5., 57., 2030., 210., 753., 2.77133106
-
-#for field_name in request.form:
-    # Получаем значение поля формы
-    #x = float(field_name)
-    # Добавляем значение в список
-    #X.append(x)
