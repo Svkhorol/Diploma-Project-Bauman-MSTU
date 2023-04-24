@@ -4,8 +4,10 @@ body {
     background-image: url("{{ url_for('static', filename='images/photo.jpg') }}");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: Trebuchet MS, sans-serif;
     font-weight: bold;
     color: #15686a;
+    border: none;
 }
 .prediction{
     color: white;
@@ -16,12 +18,14 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 30px;
+    border-radius: 6px;
 }
 .legend{
     text-align: center;
     font-size: 25px;
     margin-top: 7px;
     margin-bottom: 7px;
+    border: none;
 }
 form{
     margin: auto;
@@ -30,11 +34,14 @@ form{
     background-color: rgba(255, 255, 255, 0.65);
     margin-top: 7px;
     margin-bottom: 7px;
+    border-radius: 6px;
+    border: none;
 }
 form input[type="number"] {
     width: 100%;
     margin-top: 7px;
     margin-bottom: 7px;
+    border: none;
 }
 .button{
     background-color: #15686a;
@@ -53,6 +60,7 @@ form input[type="number"] {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 25px;
+    border-radius: 6px;
 </style>
 
 
@@ -71,47 +79,47 @@ form input[type="number"] {
         <table>
             <tr>
                 <td>Количество отвердителя, м.%</td>
-                <td><input name="Количество отвердителя, м.%" type="number" required value="1"></td>
+                <td><input name="Количество отвердителя, м.%" type="number" required value="50"></td>
             </tr>
             <tr>
                 <td>Содержание эпоксидных групп, %</td>
-                <td><input name="Содержание эпоксидных групп, %" type="number" required value="1"></td>
+                <td><input name="Содержание эпоксидных групп, %" type="number" required value="22"></td>
             </tr>
             <tr>
                 <td>Температура вспышки, С</td>
-                <td><input name="Температура вспышки, С" type="number" required value="1"></td>
+                <td><input name="Температура вспышки, С" type="number" required value="285"></td>
             </tr>
             <tr>
                 <td>Потребление смолы, г/м<sup>2</sup></td>
-                <td><input name="Потребление смолы, г/м2" type="number" required value="1"></td>
+                <td><input name="Потребление смолы, г/м2" type="number" required value="220"></td>
             </tr>
             <tr>
                 <td>Угол нашивки, град</td>
-                <td><input name="Угол нашивки, град" type="number" required value="1"></td>
+                <td><input name="Угол нашивки, град" type="number" required value="0"></td>
             </tr>
             <tr>
                 <td>Шаг нашивки</td>
-                <td><input name="Шаг нашивки" type="number" required value="1"></td>
+                <td><input name="Шаг нашивки" type="number" required value="4"></td>
             </tr>
             <tr>
                 <td>Плотность нашивки</td>
-                <td><input name="Плотность нашивки" type="number" required value="1"></td>
+                <td><input name="Плотность нашивки" type="number" required value="60"></td>
             </tr>
             <tr>
                 <td>Плотность, кг/м<sup>3</sup></td>
-                <td><input name="Плотность, кг/м3" type="number" required value="1"></td>
+                <td><input name="Плотность, кг/м3" type="number" required value="2030"></td>
             </tr>
             <tr>
                 <td>Поверхностная плотность, г/м<sup>2</sup></td>
-                <td><input name="Поверхностная плотность, г/м2" type="number" required value="1"></td>
+                <td><input name="Поверхностная плотность, г/м2" type="number" required value="210"></td>
             </tr>
             <tr>
                 <td>Модуль упругости, ГПа</td>
-                <td><input name="Модуль упругости, ГПа" type="number" required value="1"></td>
+                <td><input name="Модуль упругости, ГПа" type="number" required value="70"></td>
             </tr>
             <tr>
                 <td>Соотношение матрица-наполнитель</td>
-                <td><input name="Соотношение матрица-наполнитель" type="number" required value="1"></td>
+                <td><input name="Соотношение матрица-наполнитель" type="number" required value="2"></td>
             </tr>
         </table>
         <br>
@@ -127,5 +135,3 @@ form input[type="number"] {
         {{result}} ГПа
     </div>
 {% endif %}
-
-
