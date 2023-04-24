@@ -1,15 +1,15 @@
 ## Diploma-Project-Bauman-MSTU  
-<font color=blue size=4>Прогнозирование конечных свойств новых материалов (композиционных материалов)</font>  
-<font size=4>Prediction the final properties of new materials (composite materials)</font>  
+### Прогнозирование конечных свойств новых материалов (композиционных материалов)  
+#### Prediction the final properties of new materials (composite materials)  
 ___________
 В работе разработаны модели машинного обучения для прогнозирования ряда механических свойств композиционных материалов. На основе лучшей модели разработано web-приложение, прогнозирующее прочностные характеристики композитов. Кейс основан на реальных производственых задачах Центра НТИ "Цифровое материаловедение: новые материалы и вещества".
   
 ### Содержание  
-[1. Разведочный анализ данных]()  
-[2. Выявление искусственно сгенерированных данных]()  
-[3. Предобработка данных]()  
-[4. Создание, тестирование и сравнение моделей]()  
-[5. Подготовка модели для приложения]()  
+[1. Разведочный анализ данных](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/1_EDA.ipynb)  
+[2. Выявление искусственно сгенерированных данных](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/2_Synthetic_Data.ipynb)  
+[3. Предобработка данных](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/3_Processing.ipynb)  
+[4. Создание, тестирование и сравнение моделей](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/4_Modeling.ipynb)  
+[5. Подготовка модели для приложения](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/Flask/src/get_prediction_func.ipynb)  
   
 ### Инструкция по запуску приложения  
 Для запуска web-приложения перейти в браузере по ссылке:  
