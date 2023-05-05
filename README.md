@@ -6,7 +6,7 @@ ___________
   
 ### Содержание  
 [1. Разведочный анализ данных](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/1_EDA.ipynb)  
-[2. Выявление реальных и синтетических данных](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/2_Synthetic_Data.ipynb)  
+[2. Выявление реальных и синтетических данных](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/2_Real_Data.ipynb)  
 [3. Предобработка данных c удалением выбросов](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/3_Processing.ipynb)  
 [4. Предобработка данных c заменой выбросов](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/3_Processing_save_outliers_in_real_data.ipynb)  
 [5. Создание, тестирование и сравнение моделей](https://github.com/Svkhorol/Diploma-Project-Bauman-MSTU/blob/main/notebooks/4_Modeling.ipynb)  
