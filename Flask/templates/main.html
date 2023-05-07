@@ -63,8 +63,6 @@ form input[type="number"] {
     border-radius: 6px;
 </style>
 
-
-
 <head>
     <title>Прогнозирование конечных свойств композиционных материалов</title>
 </head>
@@ -133,5 +131,15 @@ form input[type="number"] {
         Результат расчета модуля упругости<br>
         при растяжении композита:<br>
         {{result}} ГПа
+    </div>
+{% endif %}
+
+{% if errors %}
+    <div class="res">
+        Введите значения из допустимого диапазона <br>
+        от 0 до 7000 в следующие поля: <br>
+        {% for error in errors %}
+            {{ error }} <br>
+        {% endfor %}
     </div>
 {% endif %}
