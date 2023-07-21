@@ -63,6 +63,24 @@ form input[type="number"] {
     border-radius: 6px;
 </style>
 
+<script>
+    function validateForm() {
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) {
+            var input = inputs[i];
+            if (input.type === "number") {
+                var value = parseFloat(input.value);
+                if (isNaN(value) || value < 0 || value > 3000) {
+                    alert("Поле " + input.name + " должно содержать число от 0 до 3000.");
+                    input.focus();
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
+
 <head>
     <title>Прогнозирование конечных свойств композиционных материалов</title>
 </head>
